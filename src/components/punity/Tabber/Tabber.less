@@ -5,7 +5,7 @@
         display: flex;
         flex-flow: column;
         align-items: center;
-
+        
         .title {
             font-size: 2em;
             margin-bottom: 1em;
@@ -24,26 +24,27 @@
             }
         }
 
-        .portLink {
+    }
+    
+    .portLink {
+        display: block;
+        background-color: @site-main-color;
+        margin: 2em 0;
+        border-radius: 5px;
+        border: @site-border;
+
+        &:hover {
+            background-color: darken(@site-main-color, 10%);
+        }
+
+        a {
+            color: white;
             display: block;
-            background-color: @site-main-color;
-            margin: 2em 0;
-            border-radius: 5px;
-            border: @site-border;
-
-            &:hover {
-                background-color: darken(@site-main-color, 10%);
-            }
-
-            a {
-                color: white;
-                display: block;
-                text-decoration: none;
-                text-align: center;
-                padding: .5em 1em;
-                font-family: @site-main-font;
-                font-size: 1em;
-            }
+            text-decoration: none;
+            text-align: center;
+            padding: .5em 1em;
+            font-family: @site-main-font;
+            font-size: 1em;
         }
     }
 }
@@ -52,10 +53,10 @@
 {
     .content {
         .image {
-            width: auto;
+            width: 100%;
 
             img {
-                max-width: auto;
+                max-width: 50% !important;
             }
         }
 

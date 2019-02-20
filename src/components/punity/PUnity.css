@@ -13,6 +13,12 @@ a {
   align-content: flex-start;
   justify-content: center;
 }
+.content a {
+  color: white;
+}
+.content a:hover {
+  color: black;
+}
 .content .project-panel {
   background-repeat: no-repeat;
   background-position-x: 50%;

@@ -18,17 +18,17 @@
 .content.no-in-line .image img {
   max-width: 100%;
 }
-.content.no-in-line .portLink {
+.content .portLink {
   display: block;
   background-color: #1b7a97;
   margin: 2em 0;
   border-radius: 5px;
   border: 1px solid white;
 }
-.content.no-in-line .portLink:hover {
+.content .portLink:hover {
   background-color: #13576c;
 }
-.content.no-in-line .portLink a {
+.content .portLink a {
   color: white;
   display: block;
   text-decoration: none;
@@ -39,10 +39,10 @@
 }
 @media only screen and (min-width: 850px) {
   .content .image {
-    width: auto;
+    width: 100%;
   }
   .content .image img {
-    max-width: auto;
+    max-width: 50% !important;
   }
   .content .description {
     width: 50%;

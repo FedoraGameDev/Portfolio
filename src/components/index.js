@@ -7,3 +7,4 @@ export { default as Contact } from './contact/Contact';
 export { default as DoF } from './punity/DoF/DoF';
 export { default as Tabber } from './punity/Tabber/Tabber';
 export { default as Items } from './punity/Items/Items';
+export { default as Deep } from './punity/Deep/Deep';
