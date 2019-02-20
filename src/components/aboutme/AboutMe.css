@@ -1,0 +1,18 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+main .content {
+  margin: 0 2em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+main .content h2 {
+  color: #c1ff46;
+}
+@media only screen and (min-width: 810px) {
+  main .content.thin {
+    width: 50%;
+  }
+}

@@ -1,0 +1,50 @@
+.content.no-in-line {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.content.no-in-line .title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  color: #c1ff46;
+}
+.content.no-in-line .image {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.content.no-in-line .image img {
+  max-width: 100%;
+}
+.content.no-in-line .portLink {
+  display: block;
+  background-color: #1b7a97;
+  margin: 2em 0;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.content.no-in-line .portLink:hover {
+  background-color: #13576c;
+}
+.content.no-in-line .portLink a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em 1em;
+  font-family: 'Press Start 2P';
+  font-size: 1em;
+}
+@media only screen and (min-width: 850px) {
+  .content .image {
+    width: auto;
+  }
+  .content .image img {
+    max-width: auto;
+  }
+  .content .description {
+    width: 50%;
+  }
+}

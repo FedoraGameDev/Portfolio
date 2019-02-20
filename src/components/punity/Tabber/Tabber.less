@@ -1,0 +1,66 @@
+@import "../../../variables.less";
+
+.content {
+    &.no-in-line {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            color: #c1ff46;
+        }
+
+        .image {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .portLink {
+            display: block;
+            background-color: @site-main-color;
+            margin: 2em 0;
+            border-radius: 5px;
+            border: @site-border;
+
+            &:hover {
+                background-color: darken(@site-main-color, 10%);
+            }
+
+            a {
+                color: white;
+                display: block;
+                text-decoration: none;
+                text-align: center;
+                padding: .5em 1em;
+                font-family: @site-main-font;
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 850px)
+{
+    .content {
+        .image {
+            width: auto;
+
+            img {
+                max-width: auto;
+            }
+        }
+
+        .description {
+            width: 50%;
+        }
+    }
+}

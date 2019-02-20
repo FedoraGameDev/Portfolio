@@ -1,0 +1,175 @@
+@import '../../variables.less';
+@navi-width: 100%;
+@navi-height: 4em;
+@navi-padding: .5em;
+
+.navi {
+    width: @navi-width;
+    height: @navi-height;
+    font-family: @site-main-font;
+    
+    .look {
+        background-color: @site-main-color;
+        display: inline-block;
+        width: 33.333333333333333333333333333333%;
+        height: 100%;
+        cursor: pointer;
+        border: @site-border;
+        border-top: none;
+        border-right: none;
+
+        &.smaller {
+            display: none;
+        }
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:hover, &.current {
+            background-color: @site-accent-color-1;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            font-size: .7em;
+            text-decoration: none;
+            color: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.portfolio-drop-down {
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    top: @navi-height;
+    left: calc(50% - (@navi-width / 3 / 2));
+    width: calc(@navi-width / 3 + 1px);
+    height: calc(@navi-height * 2);
+    z-index: 1;
+    font-family: @site-main-font;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 20px);
+        top: -20px;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid @site-border-color;// @site-accent-color-1;
+        clear: both;
+    }
+    
+    &.active {
+        display: flex;
+    }
+
+    .look {
+        background-color: @site-main-color;
+        height: 50%;
+        border: @site-border;
+        border-top: none;
+
+        &:last-child
+        {
+            border-radius: 0 0 5px 5px;
+        }
+
+        &:hover {
+            background-color: @site-accent-color-1;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: white;
+            font-size: 1em;
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 850px)
+{
+    @navi-width: 50%;
+    @navi-mini-width: 15%;
+
+    .navi {
+        width: @navi-width;
+        position: absolute;
+        top: @navi-padding;
+        left: calc(100% - @navi-width - @navi-padding);
+
+        &.watch-out {
+            position: fixed;
+            z-index: 1;
+            width: @navi-mini-width;
+            height: calc(@navi-height / 2);
+            left: calc(100% - @navi-mini-width - @navi-padding);
+
+            .look {
+                display: none;
+
+                &.smaller {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .look {
+            border-top: @site-border;
+            
+            &:first-child, &:nth-child(4) {
+                border-left: @site-border;
+                border-radius: 5px 0 0 5px;
+            }
+            
+            &:nth-child(3), &:last-child {
+                border-right: @site-border;
+                border-radius: 0 5px 5px 0;
+            }
+        }
+    }
+
+    .portfolio-drop-down {
+        top: calc(@navi-height + @navi-padding);
+        left: calc((100% - (@navi-width + @navi-padding)) + (@navi-width / 2) - (@navi-width / 3 / 2));
+        width: calc(@navi-width / 3 + 1px);
+        height: calc(@navi-height * 2);
+        border-radius: 0 0 5px 5px;
+
+        &.watch-out {
+            position: fixed;
+            left: calc(100% - (@navi-mini-width + @navi-padding));
+            top: calc(@navi-height / 2 + @navi-padding);
+            width: @navi-mini-width;
+
+            &:after {
+                left: calc(50% - 10px);
+                top: -10px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid @site-border-color;// @site-accent-color-1;
+            }
+
+            .look {
+                height: calc(@navi-height / 1.5);
+
+                &:first-child {
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+        }
+    }
+}
